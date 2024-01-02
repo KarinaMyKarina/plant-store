@@ -17,7 +17,7 @@ const Cart = () => {
             </div>
             
             <div  className="cart-detail">
-                {cartItems.map(cartItem => <CartItem cartItem={ cartItem }/>)}
+                {cartItems.map(cartItem => <CartItem cartItem={ cartItem } key={ cartItem.id }/>)}
             </div>
 
             <div className="total-cost">
