@@ -85,15 +85,14 @@ export const dataProducts = [
 
     {
         id: 8,
-        name:'Cylindrical Snake Plant',
-        searchItem: 'air purifying plant',
-        price: '40',
-        image: './images/cylindrical-snake.jpg',
-        tall: '32 cm tall',
-        pot: '25 cm pot',
-        description: 'Snake plant has a multitude of air-cleaning tricks up its sleeve. It removes formaldehyde, xylene and nitrogen oxides from the air.',
+        name:'Fiddle Leaf Fig Plant',
+        searchItem: 'large plant',
+        price: '105',
+        image: './images/fiddle-leaf-fig-two.jpg',
+        tall: '70 cm tall',
+        pot: '35 cm pot',
+        description: 'Fiddles are effective at cleaning air and removing harmful chemicals. The leaf is used for conditions such as diabetes, high cholesterol, and skin conditions.',
         showMore: ''
-        
     },
 
     {
@@ -267,14 +266,15 @@ export const dataProducts = [
 
     {
         id: 23,
-        name:'Fiddle Leaf Fig Plant',
-        searchItem: 'large plant',
-        price: '105',
-        image: './images/fiddle-leaf-fig-two.jpg',
-        tall: '70 cm tall',
-        pot: '35 cm pot',
-        description: 'Fiddles are effective at cleaning air and removing harmful chemicals. The leaf is used for conditions such as diabetes, high cholesterol, and skin conditions.',
+        name:'Cylindrical Snake Plant',
+        searchItem: 'air purifying plant',
+        price: '40',
+        image: './images/cylindrical-snake.jpg',
+        tall: '32 cm tall',
+        pot: '25 cm pot',
+        description: 'Snake plant has a multitude of air-cleaning tricks up its sleeve. It removes formaldehyde, xylene and nitrogen oxides from the air.',
         showMore: ''
+        
     },
 
     {

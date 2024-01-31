@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 export const cartSlice = createSlice({
     name: 'cart',
@@ -8,30 +8,41 @@ export const cartSlice = createSlice({
 
     reducers: {
         addItemToCart: (state, action) => {
-            const timeId = new Date().getTime()
-            state.cartItems.push({
-                id: timeId,
-                plantId: action.payload.plant.id,
-                quantity: action.payload.quantity,
-                totalPrice: action.payload.quantity * action.payload.plant.price
-            })
+            const existingItem = state.cartItems.find(item => item.plantId === action.payload.plant.id);
+            if (existingItem) {
+                existingItem.quantity += action.payload.quantity;
+                existingItem.totalPrice = existingItem.quantity * action.payload.plant.price;
+            } else {
+                const timeId = new Date().getTime();
+                state.cartItems.push({
+                    id: timeId,
+                    plantId: action.payload.plant.id,
+                    quantity: action.payload.quantity,
+                    totalPrice: action.payload.quantity * action.payload.plant.price
+                });
+            }
         },
 
         removeItemFromCart: (state, action) => {
-            state.cartItems = state.cartItems.filter (
+            state.cartItems = state.cartItems.filter(
                 cartItem => cartItem.id !== action.payload.cartItemId
-            )
+            );
         },
         
     }
-})
+});
 
 export const getTotalPrice = state => {
-    return state.cart.cartItems.reduce((total, cartItems) => {
-        return cartItems.totalPrice + total
-    }, 0)
-}
+    return state.cart.cartItems.reduce((total, cartItem) => {
+        return cartItem.totalPrice + total;
+    }, 0);
+};
 
+export const getTotalQuantity = state => {
+    return state.cart.cartItems.reduce((total, cartItem) => {
+        return cartItem.quantity + total;
+    }, 0);
+};
 
 export const getCartItems = state => state.cart.cartItems;
 export const { addItemToCart, removeItemFromCart } = cartSlice.actions;

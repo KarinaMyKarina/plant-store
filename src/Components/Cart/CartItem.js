@@ -3,7 +3,6 @@ import dataProducts from "../../data/dataProducts";
 import { removeItemFromCart } from "../../redux/cartSlice";
 
 
-
 const CartItem = ({ cartItem }) => {
 
     console.log(cartItem)
